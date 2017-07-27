@@ -5,10 +5,10 @@
   DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=.;User ID=sa;Initial Catalog=Permanencia;Application Name=SSIS-Permanencia-{C3F8CEF7-4BE3-4443-88B7-B9025810EAE8}LocalHost.Permanencia.sa;">
+      DTS:ConnectionString="Data Source=.;User ID=sa;Initial Catalog=Permanencia;Persist Security Info=True;Application Name=SSIS-Permanencia-{C3F8CEF7-4BE3-4443-88B7-B9025810EAE8}LocalHost.Permanencia.sa;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt4N5xO4dkEeEDZsXYk7D0gAAAAACAAAAAAAQZgAAAAEAACAAAAApbiOTVWjVxY/s2jh1JZ6aL7yTnAqKpjIzJfp/g36x+gAAAAAOgAAAAAIAACAAAACD1pRBxCpzA5T+72EQyLomQ0CAEy/v4kFVw0ZTp4UniHAAAAAzEXb90jue1HY0wNpFqKLsPrMJ67d/qVm40sIS3fELK9Y0MXlbbnkvXl78GXh9S8ZyxQ7KHlMbxH9wq+siJmZ8TbfbfHvMICOGEk+plL+fEnovy38fbUYs1avB4a+qZRINGMZtgKoU2k7dzzV0RJtjQAAAAMBOfzVzvJooaLzAagpy5lg1st+ogRN2MJLjnn4TxDnzMU8zD6EWZz9tdh1qVRZ14HjDvJ7TLbFR4B3Fhp6Lizk=</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt4N5xO4dkEeEDZsXYk7D0gAAAAACAAAAAAAQZgAAAAEAACAAAACe+X4HW4GflL3SL5fjm1RzKtndG9Kts0aYd+kNR1d4CAAAAAAOgAAAAAIAACAAAAA78IUDbAJ64wlAwm/zU8C2SbSasFFucYrSUloJF3MYgnAAAAA4HvfymUp7jFR2dQo0Vda2yyT10kxA787eVL5Q5HLTR5S84r/WLbfiyLJ69MnU/tWzYaiSzFrYJ7ALOuDzJrX9DHlngglknZuesAnpvE8w56j7W9WuxqgDmi2VL1t3gpv1fLIe/xSq/AlvoJPAUM2rQAAAAIdzxXytnKlW+Jh0kFzJj9eg/pGLTlH6k6PuaNvW4REmV/XxbLHU9soRYe6okUqKk0UWT32OSmRSrs10fWo+O5E=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

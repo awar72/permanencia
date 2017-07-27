@@ -2,13 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Permanencia</Name>
-    <LastWriteTime>2017-06-16T01:18:54Z</LastWriteTime>
+    <LastWriteTime>2017-07-27T05:21:21.3610302Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>CargaCurso.dtsx</Name>
-      <LastWriteTime>2017-06-16T01:21:21Z</LastWriteTime>
+      <LastWriteTime>2017-07-27T02:55:25.2641564Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>CargaMora.dtsx</Name>
+      <LastWriteTime>2017-07-27T05:09:41.9537374Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>CargaAsistencia.dtsx</Name>
+      <LastWriteTime>2017-07-27T05:22:08.4515438Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

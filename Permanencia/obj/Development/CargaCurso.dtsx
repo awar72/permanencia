@@ -1,33 +1,33 @@
 <?xml version="1.0"?>
-<DTS:Executable
-  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ExecutableType="SSIS.Package.3"
-  DTS:CreatorName="AGC_W8\Arturo"
-  DTS:CreatorComputerName="AGC_W8"
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
   DTS:CreationDate="6/15/2017 9:03:26 PM"
-  DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{71009EC0-6565-4FF6-929A-C91E2EEC2CD9}"
-  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="AGC_W8"
+  DTS:CreatorName="AGC_W8\Arturo"
+  DTS:DTSID="{8867F6AD-5B81-4E11-9B22-55BFBEB74ED1}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="3082"
   DTS:ObjectName="CargaCurso"
-  DTS:DTSID="{8867F6AD-5B81-4E11-9B22-55BFBEB74ED1}"
-  DTS:CreationName="SSIS.Package.3">
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{7FE0F8B6-1120-4EC5-999E-55B33BF8E66F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Permanencia.sa1]"
-      DTS:ObjectName="LocalHost.Permanencia.sa1"
+      DTS:CreationName="OLEDB"
       DTS:DTSID="{E1EC8516-0977-4DAB-86B6-1BC160E8832D}"
-      DTS:CreationName="OLEDB">
+      DTS:ObjectName="LocalHost.Permanencia.sa1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=.;User ID=sa;Initial Catalog=Permanencia;Provider=SQLNCLI11.1;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt4N5xO4dkEeEDZsXYk7D0gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADzwA5W8ytaGVQ0OXQVc8VwdNzflpGi2PiamKC5aw52wQAAAAAOgAAAAAIAACAAAAAiFb6E/b4jU6HWgvNVZmaBaSwpTFrzz5iRJJzTK7b3LxAAAACCxvYnYdTIzQNJ2rN2oJwhQAAAAOTLPon22Ce2luuniIZNvmuPRDqVdJGRs8qGhZ/28uIg63q+AXjwhJhcHS6oFp4LcPOn7GEiXyaTxEPPM91LMKw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt4N5xO4dkEeEDZsXYk7D0gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABlfrA96IamYKTGOfa8l1BhDYSFBt4/Lqogi4JSXMucdgAAAAAOgAAAAAIAACAAAADESSEL2OBri4dKIG1RccrlUX5Y/FuYnRNTk+2MrFlWbRAAAAAheObWR/57zdAFC3irMNV3QAAAADBk7gjtW1f27CuC+iDDl8PUNfYxuhUPfm+eGJ3gHrGT0CDVbnQTCLMrmpl7oZbJRkdC4jMWOoc+rwYYRO7Gm/s</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -36,13 +36,13 @@
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Carga Archivo"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{F09FFD72-E7A4-403C-921F-8AAD374C2B72}"
       DTS:ExecutableType="SSIS.Pipeline.3"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carga Archivo"
-      DTS:DTSID="{F09FFD72-E7A4-403C-921F-8AAD374C2B72}"
-      DTS:Description="Tarea Flujo de datos"
-      DTS:CreationName="SSIS.Pipeline.3">
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
@@ -50,553 +50,553 @@
           <components>
             <component
               refId="Package\Carga Archivo\BD Permanencia"
-              name="BD Permanencia"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
               description="Destino de OLE DB"
+              name="BD Permanencia"
               usesDispositions="true"
-              version="4"
-              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4">
+              version="4">
               <properties>
                 <property
-                  name="CommandTimeout"
                   dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito.">0</property>
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
                 <property
-                  name="OpenRowset"
                   dataType="System.String"
-                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas.">[dbo].[Curso_STG]</property>
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Curso_STG]</property>
                 <property
-                  name="OpenRowsetVariable"
                   dataType="System.String"
-                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."></property>
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
                 <property
-                  name="SqlCommand"
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
+                  name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
-                  name="DefaultCodePage"
                   dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos.">1252</property>
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
                 <property
-                  name="AlwaysUseDefaultCodePage"
                   dataType="System.Boolean"
-                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir caracteres.">false</property>
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
                 <property
-                  name="AccessMode"
                   dataType="System.Int32"
                   description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
                   typeConverter="AccessMode">3</property>
                 <property
-                  name="FastLoadKeepIdentity"
                   dataType="System.Boolean"
-                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Sólo se aplica si está activada la carga rápida.">false</property>
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Sólo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
                 <property
-                  name="FastLoadKeepNulls"
                   dataType="System.Boolean"
-                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Sólo se aplica si está activada la carga rápida.">false</property>
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Sólo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
                 <property
-                  name="FastLoadOptions"
                   dataType="System.String"
-                  description="Especifica opciones para usar con la carga rápida. Sólo se aplica si está activada la carga rápida.">TABLOCK,CHECK_CONSTRAINTS</property>
+                  description="Especifica opciones para usar con la carga rápida. Sólo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
-                  name="FastLoadMaxInsertCommitSize"
                   dataType="System.Int32"
-                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Sólo se aplica si está activada la carga rápida.">2147483647</property>
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Sólo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
               </properties>
               <connections>
                 <connection
                   refId="Package\Carga Archivo\BD Permanencia.Connections[OleDbConnection]"
-                  name="OleDbConnection"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   connectionManagerID="Package.ConnectionManagers[LocalHost.Permanencia.sa1]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Permanencia.sa1]" />
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Permanencia.sa1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
                   refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB]"
-                  name="Entrada de destino de OLE DB"
-                  hasSideEffects="true"
                   errorOrTruncationOperation="Insertar"
-                  errorRowDisposition="FailComponent">
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
                   <inputColumns>
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[SEDE]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SEDE]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[SEDE]"
-                      cachedName="SEDE"
                       cachedDataType="wstr"
-                      cachedLength="255" />
+                      cachedLength="255"
+                      cachedName="SEDE"
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[SEDE]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SEDE]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[CARRERA]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CARRERA]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[CARRERA]"
-                      cachedName="CARRERA"
                       cachedDataType="wstr"
-                      cachedLength="255" />
+                      cachedLength="255"
+                      cachedName="CARRERA"
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[CARRERA]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CARRERA]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[JORNADA]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[JORNADA]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[JORNADA]"
-                      cachedName="JORNADA"
                       cachedDataType="wstr"
-                      cachedLength="255" />
+                      cachedLength="255"
+                      cachedName="JORNADA"
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[JORNADA]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[JORNADA]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[CODIGO ASIGNATURA]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CODIGO ASIGNATURA]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[CODIGO ASIGNATURA]"
-                      cachedName="CODIGO ASIGNATURA"
                       cachedDataType="wstr"
-                      cachedLength="255" />
+                      cachedLength="255"
+                      cachedName="CODIGO ASIGNATURA"
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[CODIGO ASIGNATURA]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CODIGO ASIGNATURA]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[DESC ASIGNATURA]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC ASIGNATURA]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[DESC ASIGNATURA]"
-                      cachedName="DESC ASIGNATURA"
                       cachedDataType="wstr"
-                      cachedLength="255" />
+                      cachedLength="255"
+                      cachedName="DESC ASIGNATURA"
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[DESC ASIGNATURA]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC ASIGNATURA]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[SECCION]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SECCION]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[SECCION]"
+                      cachedDataType="r8"
                       cachedName="SECCION"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[SECCION]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SECCION]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[AÑO]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[AÑO]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[AÑO]"
+                      cachedDataType="r8"
                       cachedName="AÑO"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[AÑO]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[AÑO]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[SEMESTRE]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SEMESTRE]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[SEMESTRE]"
+                      cachedDataType="r8"
                       cachedName="SEMESTRE"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[SEMESTRE]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SEMESTRE]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[RUT ALUMNO]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[RUT ALUMNO]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[RUT ALUMNO]"
-                      cachedName="RUT ALUMNO"
                       cachedDataType="wstr"
-                      cachedLength="255" />
+                      cachedLength="255"
+                      cachedName="RUT ALUMNO"
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[RUT ALUMNO]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[RUT ALUMNO]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[NOMBRE ALUMNO]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[NOMBRE ALUMNO]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[NOMBRE ALUMNO]"
-                      cachedName="NOMBRE ALUMNO"
                       cachedDataType="wstr"
-                      cachedLength="255" />
+                      cachedLength="255"
+                      cachedName="NOMBRE ALUMNO"
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[NOMBRE ALUMNO]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[NOMBRE ALUMNO]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[ESTADO ASIGNATURA]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[ESTADO ASIGNATURA]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[ESTADO ASIGNATURA]"
-                      cachedName="ESTADO ASIGNATURA"
                       cachedDataType="wstr"
-                      cachedLength="255" />
+                      cachedLength="255"
+                      cachedName="ESTADO ASIGNATURA"
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[ESTADO ASIGNATURA]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[ESTADO ASIGNATURA]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[DESC ESTADO ASIGNATURA]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC ESTADO ASIGNATURA]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[DESC ESTADO ASIGNATURA]"
-                      cachedName="DESC ESTADO ASIGNATURA"
                       cachedDataType="wstr"
-                      cachedLength="255" />
+                      cachedLength="255"
+                      cachedName="DESC ESTADO ASIGNATURA"
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[DESC ESTADO ASIGNATURA]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC ESTADO ASIGNATURA]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[Nº NOTAS PARCIALES]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[Nº NOTAS PARCIALES]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nº NOTAS PARCIALES]"
+                      cachedDataType="r8"
                       cachedName="Nº NOTAS PARCIALES"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nº NOTAS PARCIALES]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[Nº NOTAS PARCIALES]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[Nº NOTAS EXAMEN]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[Nº NOTAS EXAMEN]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nº NOTAS EXAMEN]"
+                      cachedDataType="r8"
                       cachedName="Nº NOTAS EXAMEN"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nº NOTAS EXAMEN]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[Nº NOTAS EXAMEN]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C1]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C1]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C1]"
+                      cachedDataType="r8"
                       cachedName="C1"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C1]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C1]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C2]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C2]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C2]"
+                      cachedDataType="r8"
                       cachedName="C2"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C2]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C2]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C3]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C3]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C3]"
+                      cachedDataType="r8"
                       cachedName="C3"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C3]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C3]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C4]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C4]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C4]"
+                      cachedDataType="r8"
                       cachedName="C4"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C4]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C4]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C5]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C5]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C5]"
+                      cachedDataType="r8"
                       cachedName="C5"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C5]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C5]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C6]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C6]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C6]"
+                      cachedDataType="r8"
                       cachedName="C6"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C6]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C6]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C7]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C7]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C7]"
+                      cachedDataType="r8"
                       cachedName="C7"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C7]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C7]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C8]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C8]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C8]"
+                      cachedDataType="r8"
                       cachedName="C8"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C8]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C8]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C9]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C9]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C9]"
+                      cachedDataType="r8"
                       cachedName="C9"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C9]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C9]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C10]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C10]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C10]"
+                      cachedDataType="r8"
                       cachedName="C10"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C10]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C10]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C11]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C11]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C11]"
+                      cachedDataType="r8"
                       cachedName="C11"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C11]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C11]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C12]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C12]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C12]"
+                      cachedDataType="r8"
                       cachedName="C12"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C12]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C12]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C13]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C13]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C13]"
+                      cachedDataType="r8"
                       cachedName="C13"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C13]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C13]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C14]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C14]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C14]"
+                      cachedDataType="r8"
                       cachedName="C14"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C14]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C14]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C15]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C15]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C15]"
+                      cachedDataType="r8"
                       cachedName="C15"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C15]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C15]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C16]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C16]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C16]"
+                      cachedDataType="r8"
                       cachedName="C16"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C16]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C16]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C17]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C17]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C17]"
+                      cachedDataType="r8"
                       cachedName="C17"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C17]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C17]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C18]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C18]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C18]"
+                      cachedDataType="r8"
                       cachedName="C18"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C18]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C18]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C19]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C19]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C19]"
+                      cachedDataType="r8"
                       cachedName="C19"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C19]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C19]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[C20]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C20]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C20]"
+                      cachedDataType="r8"
                       cachedName="C20"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C20]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C20]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[E1]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E1]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[E1]"
+                      cachedDataType="r8"
                       cachedName="E1"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[E1]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E1]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[E2]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E2]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[E2]"
+                      cachedDataType="r8"
                       cachedName="E2"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[E2]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E2]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[E3]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E3]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[E3]"
+                      cachedDataType="r8"
                       cachedName="E3"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[E3]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E3]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[PROMEDIO CATEDRA]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[PROMEDIO CATEDRA]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[PROMEDIO CATEDRA]"
+                      cachedDataType="r8"
                       cachedName="PROMEDIO CATEDRA"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[PROMEDIO CATEDRA]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[PROMEDIO CATEDRA]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[PROMEDIO EXAMEN]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[PROMEDIO EXAMEN]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[PROMEDIO EXAMEN]"
+                      cachedDataType="r8"
                       cachedName="PROMEDIO EXAMEN"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[PROMEDIO EXAMEN]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[PROMEDIO EXAMEN]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[NOTA FINAL]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[NOTA FINAL]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[NOTA FINAL]"
+                      cachedDataType="r8"
                       cachedName="NOTA FINAL"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[NOTA FINAL]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[NOTA FINAL]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[CODIGO ASIGNATURA MALLA]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CODIGO ASIGNATURA MALLA]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[CODIGO ASIGNATURA MALLA]"
-                      cachedName="CODIGO ASIGNATURA MALLA"
                       cachedDataType="wstr"
-                      cachedLength="255" />
+                      cachedLength="255"
+                      cachedName="CODIGO ASIGNATURA MALLA"
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[CODIGO ASIGNATURA MALLA]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CODIGO ASIGNATURA MALLA]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[DESC CODIGO ASIGNATURA MALLA]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC CODIGO ASIGNATURA MALLA]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[DESC CODIGO ASIGNATURA MALLA]"
-                      cachedName="DESC CODIGO ASIGNATURA MALLA"
                       cachedDataType="wstr"
-                      cachedLength="255" />
+                      cachedLength="255"
+                      cachedName="DESC CODIGO ASIGNATURA MALLA"
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[DESC CODIGO ASIGNATURA MALLA]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC CODIGO ASIGNATURA MALLA]" />
                     <inputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].Columns[ER]"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[ER]"
-                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[ER]"
+                      cachedDataType="r8"
                       cachedName="ER"
-                      cachedDataType="r8" />
+                      externalMetadataColumnId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[ER]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[ER]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[SEDE]"
-                      name="SEDE"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="SEDE" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[CARRERA]"
-                      name="CARRERA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="CARRERA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[JORNADA]"
-                      name="JORNADA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="JORNADA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[CODIGO ASIGNATURA]"
-                      name="CODIGO ASIGNATURA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="CODIGO ASIGNATURA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[DESC ASIGNATURA]"
-                      name="DESC ASIGNATURA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="DESC ASIGNATURA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[SECCION]"
-                      name="SECCION"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="SECCION" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[AÑO]"
-                      name="AÑO"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="AÑO" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[SEMESTRE]"
-                      name="SEMESTRE"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="SEMESTRE" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[RUT ALUMNO]"
-                      name="RUT ALUMNO"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="RUT ALUMNO" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[NOMBRE ALUMNO]"
-                      name="NOMBRE ALUMNO"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="NOMBRE ALUMNO" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[ESTADO ASIGNATURA]"
-                      name="ESTADO ASIGNATURA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="ESTADO ASIGNATURA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[DESC ESTADO ASIGNATURA]"
-                      name="DESC ESTADO ASIGNATURA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="DESC ESTADO ASIGNATURA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nº NOTAS PARCIALES]"
-                      name="Nº NOTAS PARCIALES"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="Nº NOTAS PARCIALES" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nº NOTAS EXAMEN]"
-                      name="Nº NOTAS EXAMEN"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="Nº NOTAS EXAMEN" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C1]"
-                      name="C1"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C1" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C2]"
-                      name="C2"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C2" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C3]"
-                      name="C3"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C3" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C4]"
-                      name="C4"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C4" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C5]"
-                      name="C5"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C5" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C6]"
-                      name="C6"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C6" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C7]"
-                      name="C7"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C7" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C8]"
-                      name="C8"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C8" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C9]"
-                      name="C9"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C9" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C10]"
-                      name="C10"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C10" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C11]"
-                      name="C11"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C11" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C12]"
-                      name="C12"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C12" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C13]"
-                      name="C13"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C13" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C14]"
-                      name="C14"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C14" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C15]"
-                      name="C15"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C15" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C16]"
-                      name="C16"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C16" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C17]"
-                      name="C17"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C17" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C18]"
-                      name="C18"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C18" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C19]"
-                      name="C19"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C19" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[C20]"
-                      name="C20"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C20" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[E1]"
-                      name="E1"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="E1" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[E2]"
-                      name="E2"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="E2" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[E3]"
-                      name="E3"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="E3" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[PROMEDIO CATEDRA]"
-                      name="PROMEDIO CATEDRA"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="PROMEDIO CATEDRA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[PROMEDIO EXAMEN]"
-                      name="PROMEDIO EXAMEN"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="PROMEDIO EXAMEN" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[NOTA FINAL]"
-                      name="NOTA FINAL"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="NOTA FINAL" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[CODIGO ASIGNATURA MALLA]"
-                      name="CODIGO ASIGNATURA MALLA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="CODIGO ASIGNATURA MALLA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[DESC CODIGO ASIGNATURA MALLA]"
-                      name="DESC CODIGO ASIGNATURA MALLA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="DESC CODIGO ASIGNATURA MALLA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB].ExternalColumns[ER]"
-                      name="ER"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="ER" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
                   refId="Package\Carga Archivo\BD Permanencia.Outputs[Salida de error de destino de OLE DB]"
-                  name="Salida de error de destino de OLE DB"
                   exclusionGroup="1"
-                  synchronousInputId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB]"
-                  isErrorOut="true">
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB]">
                   <outputColumns>
                     <outputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      lineageId="Package\Carga Archivo\BD Permanencia.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
+                      lineageId="Package\Carga Archivo\BD Permanencia.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
                       refId="Package\Carga Archivo\BD Permanencia.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      lineageId="Package\Carga Archivo\BD Permanencia.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
+                      lineageId="Package\Carga Archivo\BD Permanencia.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -605,51 +605,51 @@
             </component>
             <component
               refId="Package\Carga Archivo\Curso"
-              name="Curso"
-              componentClassID="{8C084929-27D1-479F-9641-ABB7CDADF1AC}"
+              componentClassID="DTSAdapter.ExcelSource.3"
+              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen de Excel"
+              name="Curso"
               usesDispositions="true"
-              version="1"
-              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1">
+              version="1">
               <properties>
                 <property
-                  name="CommandTimeout"
                   dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito.">0</property>
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
                 <property
-                  name="OpenRowset"
                   dataType="System.String"
-                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas.">Cursos20171$</property>
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">Cursos20171$</property>
                 <property
-                  name="OpenRowsetVariable"
                   dataType="System.String"
-                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."></property>
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
                 <property
-                  name="SqlCommand"
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
+                  name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
-                  name="SqlCommandVariable"
                   dataType="System.String"
-                  description="Variable que contiene el comando SQL para ejecutar."></property>
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
                 <property
-                  name="AccessMode"
                   dataType="System.Int32"
                   description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
                   typeConverter="AccessMode">0</property>
                 <property
-                  name="ParameterMapping"
                   dataType="System.String"
-                  description="La asignación de parámetros del comando SQL a variables."></property>
+                  description="La asignación de parámetros del comando SQL a variables."
+                  name="ParameterMapping"></property>
               </properties>
               <connections>
                 <connection
                   refId="Package\Carga Archivo\Curso.Connections[OleDbConnection]"
-                  name="OleDbConnection"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   connectionManagerID="{C651C7DF-F6CC-4072-8868-33F7F4B54F7F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Curso]" />
+                  connectionManagerRefId="Project.ConnectionManagers[Curso]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
@@ -658,832 +658,832 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SEDE]"
-                      name="SEDE"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SEDE]"
-                      length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[SEDE]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[SEDE]"
+                      length="255"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SEDE]"
+                      name="SEDE"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CARRERA]"
-                      name="CARRERA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CARRERA]"
-                      length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[CARRERA]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[CARRERA]"
+                      length="255"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CARRERA]"
+                      name="CARRERA"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[JORNADA]"
-                      name="JORNADA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[JORNADA]"
-                      length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[JORNADA]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[JORNADA]"
+                      length="255"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[JORNADA]"
+                      name="JORNADA"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CODIGO ASIGNATURA]"
-                      name="CODIGO ASIGNATURA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CODIGO ASIGNATURA]"
-                      length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[CODIGO ASIGNATURA]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[CODIGO ASIGNATURA]"
+                      length="255"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CODIGO ASIGNATURA]"
+                      name="CODIGO ASIGNATURA"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC ASIGNATURA]"
-                      name="DESC ASIGNATURA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC ASIGNATURA]"
-                      length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[DESC ASIGNATURA]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[DESC ASIGNATURA]"
+                      length="255"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC ASIGNATURA]"
+                      name="DESC ASIGNATURA"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SECCION]"
-                      name="SECCION"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SECCION]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[SECCION]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[SECCION]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SECCION]"
+                      name="SECCION"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[AÑO]"
-                      name="AÑO"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[AÑO]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[AÑO]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[AÑO]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[AÑO]"
+                      name="AÑO"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SEMESTRE]"
-                      name="SEMESTRE"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SEMESTRE]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[SEMESTRE]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[SEMESTRE]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[SEMESTRE]"
+                      name="SEMESTRE"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[RUT ALUMNO]"
-                      name="RUT ALUMNO"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[RUT ALUMNO]"
-                      length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[RUT ALUMNO]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[RUT ALUMNO]"
+                      length="255"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[RUT ALUMNO]"
+                      name="RUT ALUMNO"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[NOMBRE ALUMNO]"
-                      name="NOMBRE ALUMNO"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[NOMBRE ALUMNO]"
-                      length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[NOMBRE ALUMNO]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[NOMBRE ALUMNO]"
+                      length="255"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[NOMBRE ALUMNO]"
+                      name="NOMBRE ALUMNO"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[ESTADO ASIGNATURA]"
-                      name="ESTADO ASIGNATURA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[ESTADO ASIGNATURA]"
-                      length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[ESTADO ASIGNATURA]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[ESTADO ASIGNATURA]"
+                      length="255"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[ESTADO ASIGNATURA]"
+                      name="ESTADO ASIGNATURA"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC ESTADO ASIGNATURA]"
-                      name="DESC ESTADO ASIGNATURA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC ESTADO ASIGNATURA]"
-                      length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[DESC ESTADO ASIGNATURA]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[DESC ESTADO ASIGNATURA]"
+                      length="255"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC ESTADO ASIGNATURA]"
+                      name="DESC ESTADO ASIGNATURA"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[Nº NOTAS PARCIALES]"
-                      name="Nº NOTAS PARCIALES"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[Nº NOTAS PARCIALES]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[Nº NOTAS PARCIALES]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[Nº NOTAS PARCIALES]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[Nº NOTAS PARCIALES]"
+                      name="Nº NOTAS PARCIALES"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[Nº NOTAS EXAMEN]"
-                      name="Nº NOTAS EXAMEN"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[Nº NOTAS EXAMEN]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[Nº NOTAS EXAMEN]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[Nº NOTAS EXAMEN]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[Nº NOTAS EXAMEN]"
+                      name="Nº NOTAS EXAMEN"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C1]"
-                      name="C1"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C1]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C1]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C1]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C1]"
+                      name="C1"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C2]"
-                      name="C2"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C2]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C2]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C2]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C2]"
+                      name="C2"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C3]"
-                      name="C3"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C3]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C3]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C3]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C3]"
+                      name="C3"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C4]"
-                      name="C4"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C4]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C4]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C4]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C4]"
+                      name="C4"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C5]"
-                      name="C5"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C5]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C5]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C5]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C5]"
+                      name="C5"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C6]"
-                      name="C6"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C6]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C6]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C6]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C6]"
+                      name="C6"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C7]"
-                      name="C7"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C7]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C7]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C7]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C7]"
+                      name="C7"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C8]"
-                      name="C8"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C8]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C8]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C8]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C8]"
+                      name="C8"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C9]"
-                      name="C9"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C9]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C9]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C9]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C9]"
+                      name="C9"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C10]"
-                      name="C10"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C10]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C10]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C10]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C10]"
+                      name="C10"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C11]"
-                      name="C11"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C11]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C11]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C11]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C11]"
+                      name="C11"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C12]"
-                      name="C12"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C12]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C12]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C12]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C12]"
+                      name="C12"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C13]"
-                      name="C13"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C13]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C13]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C13]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C13]"
+                      name="C13"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C14]"
-                      name="C14"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C14]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C14]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C14]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C14]"
+                      name="C14"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C15]"
-                      name="C15"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C15]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C15]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C15]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C15]"
+                      name="C15"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C16]"
-                      name="C16"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C16]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C16]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C16]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C16]"
+                      name="C16"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C17]"
-                      name="C17"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C17]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C17]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C17]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C17]"
+                      name="C17"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C18]"
-                      name="C18"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C18]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C18]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C18]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C18]"
+                      name="C18"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C19]"
-                      name="C19"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C19]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C19]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C19]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C19]"
+                      name="C19"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C20]"
-                      name="C20"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C20]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C20]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C20]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[C20]"
+                      name="C20"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E1]"
-                      name="E1"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E1]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[E1]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[E1]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E1]"
+                      name="E1"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E2]"
-                      name="E2"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E2]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[E2]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[E2]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E2]"
+                      name="E2"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E3]"
-                      name="E3"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E3]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[E3]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[E3]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[E3]"
+                      name="E3"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[PROMEDIO CATEDRA]"
-                      name="PROMEDIO CATEDRA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[PROMEDIO CATEDRA]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[PROMEDIO CATEDRA]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[PROMEDIO CATEDRA]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[PROMEDIO CATEDRA]"
+                      name="PROMEDIO CATEDRA"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[PROMEDIO EXAMEN]"
-                      name="PROMEDIO EXAMEN"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[PROMEDIO EXAMEN]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[PROMEDIO EXAMEN]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[PROMEDIO EXAMEN]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[PROMEDIO EXAMEN]"
+                      name="PROMEDIO EXAMEN"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[NOTA FINAL]"
-                      name="NOTA FINAL"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[NOTA FINAL]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[NOTA FINAL]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[NOTA FINAL]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[NOTA FINAL]"
+                      name="NOTA FINAL"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CODIGO ASIGNATURA MALLA]"
-                      name="CODIGO ASIGNATURA MALLA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CODIGO ASIGNATURA MALLA]"
-                      length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[CODIGO ASIGNATURA MALLA]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[CODIGO ASIGNATURA MALLA]"
+                      length="255"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[CODIGO ASIGNATURA MALLA]"
+                      name="CODIGO ASIGNATURA MALLA"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC CODIGO ASIGNATURA MALLA]"
-                      name="DESC CODIGO ASIGNATURA MALLA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC CODIGO ASIGNATURA MALLA]"
-                      length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[DESC CODIGO ASIGNATURA MALLA]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[DESC CODIGO ASIGNATURA MALLA]"
+                      length="255"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[DESC CODIGO ASIGNATURA MALLA]"
+                      name="DESC CODIGO ASIGNATURA MALLA"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[ER]"
-                      name="ER"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[ER]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[ER]" />
+                      externalMetadataColumnId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[ER]"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].Columns[ER]"
+                      name="ER"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[SEDE]"
-                      name="SEDE"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="SEDE" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[CARRERA]"
-                      name="CARRERA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="CARRERA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[JORNADA]"
-                      name="JORNADA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="JORNADA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[CODIGO ASIGNATURA]"
-                      name="CODIGO ASIGNATURA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="CODIGO ASIGNATURA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[DESC ASIGNATURA]"
-                      name="DESC ASIGNATURA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="DESC ASIGNATURA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[SECCION]"
-                      name="SECCION"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="SECCION" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[AÑO]"
-                      name="AÑO"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="AÑO" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[SEMESTRE]"
-                      name="SEMESTRE"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="SEMESTRE" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[RUT ALUMNO]"
-                      name="RUT ALUMNO"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="RUT ALUMNO" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[NOMBRE ALUMNO]"
-                      name="NOMBRE ALUMNO"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="NOMBRE ALUMNO" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[ESTADO ASIGNATURA]"
-                      name="ESTADO ASIGNATURA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="ESTADO ASIGNATURA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[DESC ESTADO ASIGNATURA]"
-                      name="DESC ESTADO ASIGNATURA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="DESC ESTADO ASIGNATURA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[Nº NOTAS PARCIALES]"
-                      name="Nº NOTAS PARCIALES"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="Nº NOTAS PARCIALES" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[Nº NOTAS EXAMEN]"
-                      name="Nº NOTAS EXAMEN"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="Nº NOTAS EXAMEN" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C1]"
-                      name="C1"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C1" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C2]"
-                      name="C2"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C2" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C3]"
-                      name="C3"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C3" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C4]"
-                      name="C4"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C4" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C5]"
-                      name="C5"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C5" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C6]"
-                      name="C6"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C6" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C7]"
-                      name="C7"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C7" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C8]"
-                      name="C8"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C8" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C9]"
-                      name="C9"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C9" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C10]"
-                      name="C10"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C10" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C11]"
-                      name="C11"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C11" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C12]"
-                      name="C12"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C12" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C13]"
-                      name="C13"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C13" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C14]"
-                      name="C14"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C14" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C15]"
-                      name="C15"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C15" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C16]"
-                      name="C16"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C16" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C17]"
-                      name="C17"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C17" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C18]"
-                      name="C18"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C18" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C19]"
-                      name="C19"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C19" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[C20]"
-                      name="C20"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="C20" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[E1]"
-                      name="E1"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="E1" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[E2]"
-                      name="E2"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="E2" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[E3]"
-                      name="E3"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="E3" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[PROMEDIO CATEDRA]"
-                      name="PROMEDIO CATEDRA"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="PROMEDIO CATEDRA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[PROMEDIO EXAMEN]"
-                      name="PROMEDIO EXAMEN"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="PROMEDIO EXAMEN" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[NOTA FINAL]"
-                      name="NOTA FINAL"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="NOTA FINAL" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[CODIGO ASIGNATURA MALLA]"
-                      name="CODIGO ASIGNATURA MALLA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="CODIGO ASIGNATURA MALLA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[DESC CODIGO ASIGNATURA MALLA]"
-                      name="DESC CODIGO ASIGNATURA MALLA"
                       dataType="wstr"
-                      length="255" />
+                      length="255"
+                      name="DESC CODIGO ASIGNATURA MALLA" />
                     <externalMetadataColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel].ExternalColumns[ER]"
-                      name="ER"
-                      dataType="r8" />
+                      dataType="r8"
+                      name="ER" />
                   </externalMetadataColumns>
                 </output>
                 <output
                   refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel]"
-                  name="Salida de error de origen de Excel"
-                  isErrorOut="true">
+                  isErrorOut="true"
+                  name="Salida de error de origen de Excel">
                   <outputColumns>
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[SEDE]"
-                      name="SEDE"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[SEDE]"
+                      dataType="wstr"
                       length="255"
-                      dataType="wstr" />
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[SEDE]"
+                      name="SEDE" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[CARRERA]"
-                      name="CARRERA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[CARRERA]"
+                      dataType="wstr"
                       length="255"
-                      dataType="wstr" />
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[CARRERA]"
+                      name="CARRERA" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[JORNADA]"
-                      name="JORNADA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[JORNADA]"
+                      dataType="wstr"
                       length="255"
-                      dataType="wstr" />
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[JORNADA]"
+                      name="JORNADA" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[CODIGO ASIGNATURA]"
-                      name="CODIGO ASIGNATURA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[CODIGO ASIGNATURA]"
+                      dataType="wstr"
                       length="255"
-                      dataType="wstr" />
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[CODIGO ASIGNATURA]"
+                      name="CODIGO ASIGNATURA" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[DESC ASIGNATURA]"
-                      name="DESC ASIGNATURA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[DESC ASIGNATURA]"
+                      dataType="wstr"
                       length="255"
-                      dataType="wstr" />
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[DESC ASIGNATURA]"
+                      name="DESC ASIGNATURA" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[SECCION]"
-                      name="SECCION"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[SECCION]"
-                      dataType="r8" />
+                      name="SECCION" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[AÑO]"
-                      name="AÑO"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[AÑO]"
-                      dataType="r8" />
+                      name="AÑO" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[SEMESTRE]"
-                      name="SEMESTRE"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[SEMESTRE]"
-                      dataType="r8" />
+                      name="SEMESTRE" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[RUT ALUMNO]"
-                      name="RUT ALUMNO"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[RUT ALUMNO]"
+                      dataType="wstr"
                       length="255"
-                      dataType="wstr" />
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[RUT ALUMNO]"
+                      name="RUT ALUMNO" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[NOMBRE ALUMNO]"
-                      name="NOMBRE ALUMNO"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[NOMBRE ALUMNO]"
+                      dataType="wstr"
                       length="255"
-                      dataType="wstr" />
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[NOMBRE ALUMNO]"
+                      name="NOMBRE ALUMNO" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[ESTADO ASIGNATURA]"
-                      name="ESTADO ASIGNATURA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[ESTADO ASIGNATURA]"
+                      dataType="wstr"
                       length="255"
-                      dataType="wstr" />
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[ESTADO ASIGNATURA]"
+                      name="ESTADO ASIGNATURA" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[DESC ESTADO ASIGNATURA]"
-                      name="DESC ESTADO ASIGNATURA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[DESC ESTADO ASIGNATURA]"
+                      dataType="wstr"
                       length="255"
-                      dataType="wstr" />
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[DESC ESTADO ASIGNATURA]"
+                      name="DESC ESTADO ASIGNATURA" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[Nº NOTAS PARCIALES]"
-                      name="Nº NOTAS PARCIALES"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[Nº NOTAS PARCIALES]"
-                      dataType="r8" />
+                      name="Nº NOTAS PARCIALES" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[Nº NOTAS EXAMEN]"
-                      name="Nº NOTAS EXAMEN"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[Nº NOTAS EXAMEN]"
-                      dataType="r8" />
+                      name="Nº NOTAS EXAMEN" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C1]"
-                      name="C1"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C1]"
-                      dataType="r8" />
+                      name="C1" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C2]"
-                      name="C2"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C2]"
-                      dataType="r8" />
+                      name="C2" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C3]"
-                      name="C3"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C3]"
-                      dataType="r8" />
+                      name="C3" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C4]"
-                      name="C4"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C4]"
-                      dataType="r8" />
+                      name="C4" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C5]"
-                      name="C5"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C5]"
-                      dataType="r8" />
+                      name="C5" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C6]"
-                      name="C6"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C6]"
-                      dataType="r8" />
+                      name="C6" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C7]"
-                      name="C7"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C7]"
-                      dataType="r8" />
+                      name="C7" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C8]"
-                      name="C8"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C8]"
-                      dataType="r8" />
+                      name="C8" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C9]"
-                      name="C9"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C9]"
-                      dataType="r8" />
+                      name="C9" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C10]"
-                      name="C10"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C10]"
-                      dataType="r8" />
+                      name="C10" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C11]"
-                      name="C11"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C11]"
-                      dataType="r8" />
+                      name="C11" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C12]"
-                      name="C12"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C12]"
-                      dataType="r8" />
+                      name="C12" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C13]"
-                      name="C13"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C13]"
-                      dataType="r8" />
+                      name="C13" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C14]"
-                      name="C14"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C14]"
-                      dataType="r8" />
+                      name="C14" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C15]"
-                      name="C15"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C15]"
-                      dataType="r8" />
+                      name="C15" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C16]"
-                      name="C16"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C16]"
-                      dataType="r8" />
+                      name="C16" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C17]"
-                      name="C17"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C17]"
-                      dataType="r8" />
+                      name="C17" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C18]"
-                      name="C18"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C18]"
-                      dataType="r8" />
+                      name="C18" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C19]"
-                      name="C19"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C19]"
-                      dataType="r8" />
+                      name="C19" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C20]"
-                      name="C20"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[C20]"
-                      dataType="r8" />
+                      name="C20" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[E1]"
-                      name="E1"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[E1]"
-                      dataType="r8" />
+                      name="E1" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[E2]"
-                      name="E2"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[E2]"
-                      dataType="r8" />
+                      name="E2" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[E3]"
-                      name="E3"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[E3]"
-                      dataType="r8" />
+                      name="E3" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[PROMEDIO CATEDRA]"
-                      name="PROMEDIO CATEDRA"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[PROMEDIO CATEDRA]"
-                      dataType="r8" />
+                      name="PROMEDIO CATEDRA" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[PROMEDIO EXAMEN]"
-                      name="PROMEDIO EXAMEN"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[PROMEDIO EXAMEN]"
-                      dataType="r8" />
+                      name="PROMEDIO EXAMEN" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[NOTA FINAL]"
-                      name="NOTA FINAL"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[NOTA FINAL]"
-                      dataType="r8" />
+                      name="NOTA FINAL" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[CODIGO ASIGNATURA MALLA]"
-                      name="CODIGO ASIGNATURA MALLA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[CODIGO ASIGNATURA MALLA]"
+                      dataType="wstr"
                       length="255"
-                      dataType="wstr" />
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[CODIGO ASIGNATURA MALLA]"
+                      name="CODIGO ASIGNATURA MALLA" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[DESC CODIGO ASIGNATURA MALLA]"
-                      name="DESC CODIGO ASIGNATURA MALLA"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[DESC CODIGO ASIGNATURA MALLA]"
+                      dataType="wstr"
                       length="255"
-                      dataType="wstr" />
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[DESC CODIGO ASIGNATURA MALLA]"
+                      name="DESC CODIGO ASIGNATURA MALLA" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[ER]"
-                      name="ER"
+                      dataType="r8"
                       lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[ER]"
-                      dataType="r8" />
+                      name="ER" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
                       dataType="i4"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
                       refId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
                       dataType="i4"
+                      lineageId="Package\Carga Archivo\Curso.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -1494,23 +1494,23 @@
           <paths>
             <path
               refId="Package\Carga Archivo.Paths[Salida de origen de Excel]"
+              endId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB]"
               name="Salida de origen de Excel"
-              startId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel]"
-              endId="Package\Carga Archivo\BD Permanencia.Inputs[Entrada de destino de OLE DB]" />
+              startId="Package\Carga Archivo\Curso.Outputs[Salida de origen de Excel]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Limpia Tabla"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{0B25D695-9E45-4A8A-97CC-2ED3842326EE}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-      DTS:ThreadHint="0"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:LocaleID="-1"
       DTS:ObjectName="Limpia Tabla"
-      DTS:DTSID="{0B25D695-9E45-4A8A-97CC-2ED3842326EE}"
-      DTS:Description="Tarea Ejecutar SQL"
-      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1522,12 +1522,12 @@
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{7D50E6FB-2D70-4251-AAE1-7C2F1416258C}"
       DTS:From="Package\Limpia Tabla"
-      DTS:To="Package\Carga Archivo"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
-      DTS:DTSID="{7D50E6FB-2D70-4251-AAE1-7C2F1416258C}"
-      DTS:CreationName="" />
+      DTS:To="Package\Carga Archivo" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -1580,13 +1580,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="105,42"
-          Id="Package\Carga Archivo\Curso"
-          TopLeft="226,78" />
-        <NodeLayout
           Size="155,42"
           Id="Package\Carga Archivo\BD Permanencia"
           TopLeft="217,217" />
+        <NodeLayout
+          Size="105,42"
+          Id="Package\Carga Archivo\Curso"
+          TopLeft="226,78" />
         <EdgeLayout
           Id="Package\Carga Archivo.Paths[Salida de origen de Excel]"
           TopLeft="278.5,120">
@@ -1625,7 +1625,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga Archivo\Curso">
+    design-time-name="Package\Carga Archivo\BD Permanencia">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1638,7 +1638,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga Archivo\BD Permanencia">
+    design-time-name="Package\Carga Archivo\Curso">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
