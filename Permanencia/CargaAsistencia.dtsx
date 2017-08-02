@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="CargaAsistencia"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{3C77D503-1EB3-437F-B687-59877834CD6D}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{B81184F2-F4F8-41F6-A8FA-6EF6BB5FD38D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
@@ -30,7 +30,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{C3F8CEF7-4BE3-4443-88B7-B9025810EAE8}"
-          SQLTask:SqlStatementSource="Truncate Table AsistenciaSTG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="Truncate Table AsistenciaSTGGG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -452,25 +452,25 @@
       DTS:To="Package\Carga Asistencia" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="sql11">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,42"
-          Id="Package\Carga Asistencia"
-          TopLeft="232,208" />
-        <NodeLayout
           Size="203,42"
           Id="Package\Borra Tabla AsistenciaSTG"
           TopLeft="219,80" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Carga Asistencia"
+          TopLeft="232,208" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="320.5,122">
