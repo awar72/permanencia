@@ -1,18 +1,18 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/27/2017 1:16:08 AM"
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="AGC_W8"
   DTS:CreatorName="AGC_W8\Arturo"
-  DTS:DTSID="{87354C94-3A9E-45E7-B21C-79B0236B1716}"
+  DTS:DTSID="{EF10C78B-CDAF-495A-ACD0-C0BDADC6B7CC}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="3082"
-  DTS:ObjectName="CargaAsistencia"
+  DTS:ObjectName="STG_CargaAsistencia"
   DTS:PackageType="5"
   DTS:VersionBuild="5"
-  DTS:VersionGUID="{588ED31F-A1C9-4561-92AF-AE30AE438B1B}">
+  DTS:VersionGUID="{62B77D6F-0B00-4F39-9412-9D0B346442FE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
@@ -306,7 +306,7 @@
                 <connection
                   refId="Package\Carga Asistencia\AsitenciaSTG.Connections[IDbConnection]"
                   connectionManagerID="{C3F8CEF7-4BE3-4443-88B7-B9025810EAE8}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Permanencia.sa]"
+                  connectionManagerRefId="Project.ConnectionManagers[BD Permanencia]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -452,12 +452,12 @@
       DTS:To="Package\Carga Asistencia" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
 <Objects
   Version="sql11">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>

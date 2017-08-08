@@ -1,18 +1,18 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/15/2017 9:03:26 PM"
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="AGC_W8"
   DTS:CreatorName="AGC_W8\Arturo"
-  DTS:DTSID="{8867F6AD-5B81-4E11-9B22-55BFBEB74ED1}"
+  DTS:DTSID="{5080BC29-914D-44D3-A025-E8FC4BD0D252}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="3082"
-  DTS:ObjectName="CargaCurso"
+  DTS:ObjectName="STG_CargaCurso"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{7FE0F8B6-1120-4EC5-999E-55B33BF8E66F}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{633B97CC-966A-4EC2-8BDA-AE6542B57EF9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt4N5xO4dkEeEDZsXYk7D0gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAS1alQDg54E0BsxPFoQu8zZd1Su/6xrO1aPlpZknb8tgAAAAAOgAAAAAIAACAAAAD77bCFV8y9FNp761EyWo7QKY7ibLXfhhkjj5dLACH7TRAAAADmmhqLhMXnb71PftwjdOjTQAAAAI2AQgKY1nvwcEslHR0jOKpPGnV5+BapS32ismroDbo+KkMwoqIVNrGmd1QPWyG7xB0UuadMZAWjxkdA0Arkp7c</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt4N5xO4dkEeEDZsXYk7D0gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB9Ik1toKtjb86WKoapkTX9gT3P6kEeCWbFAa3ywV0abAAAAAAOgAAAAAIAACAAAAC+errBqUjCEINUH/qXIwo0NymwgenNuOQybIMT+taT+hAAAACF8heqNM6ANz/KO1l8DiDMQAAAAEe0AHXQxMp+SNbmriQp0xZiMOFSyvc9B9S78P7nNHvpezoTAhqsQ2fmLpwmaV9LTXbF77XBPRRqX6kfPtnTEB0</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>

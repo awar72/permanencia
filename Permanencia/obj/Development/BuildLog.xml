@@ -2,23 +2,43 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Permanencia</Name>
-    <LastWriteTime>2017-07-27T05:21:21.3610302Z</LastWriteTime>
+    <LastWriteTime>2017-08-08T03:55:15.9907713Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>CargaCurso.dtsx</Name>
-      <LastWriteTime>2017-07-27T02:55:25.2641564Z</LastWriteTime>
+      <Name>STG_CargaAsistencia.dtsx</Name>
+      <LastWriteTime>2017-08-08T02:32:42.2916623Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>CargaMora.dtsx</Name>
-      <LastWriteTime>2017-07-27T05:09:41.9537374Z</LastWriteTime>
+      <Name>STG_CargaCurso.dtsx</Name>
+      <LastWriteTime>2017-08-08T02:32:42.2756044Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>CargaAsistencia.dtsx</Name>
-      <LastWriteTime>2017-07-27T05:22:08.4515438Z</LastWriteTime>
+      <Name>STG_CargaMora.dtsx</Name>
+      <LastWriteTime>2017-08-08T02:32:42.260604Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DIM_Sede.dtsx</Name>
+      <LastWriteTime>2017-08-08T03:07:22.6072446Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DIM_Carrera.dtsx</Name>
+      <LastWriteTime>2017-08-08T03:30:34.031838Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DIM_Varios.dtsx</Name>
+      <LastWriteTime>2017-08-08T03:56:57.2517682Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DIM_Asignatura.dtsx</Name>
+      <LastWriteTime>2017-08-08T04:02:48.1027563Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
