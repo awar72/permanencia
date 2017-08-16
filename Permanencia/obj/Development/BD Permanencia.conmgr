@@ -10,7 +10,7 @@
       DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=Permanencia;Persist Security Info=True;Application Name=SSIS-Permanencia-{C3F8CEF7-4BE3-4443-88B7-B9025810EAE8}LocalHost.Permanencia.sa;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt4N5xO4dkEeEDZsXYk7D0gAAAAACAAAAAAAQZgAAAAEAACAAAAAUH2MGr9aKxzTfz2zI2z4r+3rcb1xWQdkJcjpRtgRwjwAAAAAOgAAAAAIAACAAAABnZMLwP4wwVzsp5RKf+P2rHbyV8gq/Ncn7dWVTfblWV3AAAABT0h4stRivOoV88pWkfiNgGQPHaQPxGAmD2FCSJXDkESkBGlM7O/eMo3pQw6/hrpW7LYTxLT8h1xSecBdArHXVqADTxTtJwN+8vrYmrimvI/YSoVdjSNg/QKJSWDi817HeIvM4UN7hpePhTIdRMy8hQAAAALsfPWbGoqIPpPk+pxBtZH2cB05tgw7c17W1sgEpYOzj2c8FrvJL6dUlhFrw4gp2liVA7pCh+dYwt+IrKDQNu9A=</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt4N5xO4dkEeEDZsXYk7D0gAAAAACAAAAAAAQZgAAAAEAACAAAAB5XWVjTX8x9BHIrnb2Gmu/hZ5rcjToqwYak1Ti7fOG6QAAAAAOgAAAAAIAACAAAAC0SUgYd159Sc+DZusmufLZO8vtyUMxP8DFbxp69tjgXHAAAAAgNXnt6qCQxHYsfL6eMPW471LyXQindE/FLA0Bm8t6HrbJOAWarXdY+dWCC6/E9ja2YaXtn3OFD6ysJPrd9+QJ02+XI1tv9uG2Rpsv8EQ34crdPMKtDM52B2SxMM4ckPP1kZW3pkhyAixgrtbR2D9iQAAAAJybZFUjAByNLIevYhYV51IA07UVURCT1LnaupZvD5IuySjUVH9rU2MQGDoxvsRyVri7VEhbvDvnaSkU4+1CkTI=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
