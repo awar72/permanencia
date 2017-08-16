@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="FT_Nota_Asistencia"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{1D927DD7-85BA-43DB-A81F-9A8D7AF3B121}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{149FD47A-E2BB-4A4B-AF29-AE5EEFFC68D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt4N5xO4dkEeEDZsXYk7D0gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD0fMn2isPGQ4vyuTqOnrCiF4PWr5ckcRhiheu7p7gT/wAAAAAOgAAAAAIAACAAAAAXErNjI7kyH6L6Mk29sIFGr/8emA8agcNq0P0kGBzI7RAAAAAPs2GMphgBuIyrolJenWDPQAAAACqua6NTmtq0wF2natRnentH08hSM8QAtGRkhLNvwBJtmBIB9uYVlnjmLqkaZO4pghBJVyGfQDtOhgCXnpKIkMg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt4N5xO4dkEeEDZsXYk7D0gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADGUzpTE4KCP74bim/z+N/VYUdbmiouLEpI1fNZr34U/AAAAAAOgAAAAAIAACAAAAClp6xL9Efr+K6By0c+Xt2OGaSuNVkXs5CDNYt6F/gA6hAAAADFGruN3Tv6wNcuvi+Yjd39QAAAAO49e6FVRCqrv+F7cntDPhh8e+i8wNdPvHI21bnMoApJlw890EbO0C0OC6UyJORO0sVayYrBZSeDqKXqt33kXKY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -511,6 +511,389 @@ where [refTable].[Cod_Asignatura] = ? and [refTable].[Seccion] = ? and [refTable
               </outputs>
             </component>
             <component
+              refId="Package\Tarea Flujo de datos\Busca Notas Alumno"
+              componentClassID="DTSTransform.Lookup.3"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Busca Notas Alumno"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Notas_Asig_Alu]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Notas_Asig_Alu]) [refTable]
+where [refTable].[RUT ALUMNO] = ? and [refTable].[CODIGO ASIGNATURA] = ? and [refTable].[SECCION] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="JORNADA" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CODIGO ASIGNATURA" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SECCION" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RUT ALUMNO" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Notas_Rendidas" dataType="DT_WSTR" length="1" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Notas_Azul" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]};#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asignatura]};#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[SECCION]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Permanencia.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Permanencia.sa]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Inputs[Entrada de búsqueda].Columns[Asignatura]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Asignatura"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asignatura]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">CODIGO ASIGNATURA</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Inputs[Entrada de búsqueda].Columns[RUT Alumno]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RUT Alumno"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">RUT ALUMNO</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Inputs[Entrada de búsqueda].Columns[SECCION]"
+                      cachedDataType="i4"
+                      cachedName="SECCION"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[SECCION]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">SECCION</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Tarea Flujo de datos\Busca Notas Alumno.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Notas_Rendidas]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copiar columna"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Notas_Rendidas]"
+                      name="Notas_Rendidas"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">Notas_Rendidas</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Notas_Azul]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Notas_Azul]"
+                      name="Notas_Azul"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">Notas_Azul</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en &quot;Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes&quot;."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Tarea Flujo de datos\Busca Notas Alumno.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Tarea Flujo de datos\Busca Notas Alumno.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Busca Notas Asignatura"
+              componentClassID="DTSTransform.Lookup.3"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Busca Notas Asignatura"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Notas_Asig]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Notas_Asig]) [refTable]
+where [refTable].[CODIGO ASIGNATURA] = ? and [refTable].[SECCION] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="JORNADA" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CODIGO ASIGNATURA" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SECCION" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Notas_Curso" dataType="DT_WSTR" length="1" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[Asignatura]};#{Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[SECCION]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Permanencia.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Permanencia.sa]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Inputs[Entrada de búsqueda].Columns[Asignatura]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Asignatura"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[Asignatura]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">CODIGO ASIGNATURA</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Inputs[Entrada de búsqueda].Columns[SECCION]"
+                      cachedDataType="i4"
+                      cachedName="SECCION"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[SECCION]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">SECCION</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Notas_Curso]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copiar columna"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Notas_Curso]"
+                      name="Notas_Curso"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">Notas_Curso</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en &quot;Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes&quot;."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Tarea Flujo de datos\Busca Rut"
               componentClassID="DTSTransform.Lookup.3"
               contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
@@ -670,6 +1053,158 @@ where [refTable].[Desc_Rut_Alumno] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Tarea Flujo de datos\Conversión de datos"
+              componentClassID="DTSTransform.DataConvert.3"
+              contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversión de datos"
+              name="Conversión de datos"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                  name="Entrada de conversión de datos">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Notas_Curso]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Notas_Curso"
+                      lineageId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Notas_Curso]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos]"
+                  exclusionGroup="1"
+                  name="Salida de conversión de datos"
+                  synchronousInputId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Notas_Curso_Ent]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Notas_Curso_Ent]"
+                      name="Notas_Curso_Ent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Notas_Curso]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de conversión de datos"
+                  synchronousInputId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Conversión de datos 1"
+              componentClassID="DTSTransform.DataConvert.3"
+              contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversión de datos"
+              name="Conversión de datos 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Conversión de datos 1.Inputs[Entrada de conversión de datos]"
+                  name="Entrada de conversión de datos">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos 1.Inputs[Entrada de conversión de datos].Columns[Notas_Rendidas]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Notas_Rendidas"
+                      lineageId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Notas_Rendidas]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Conversión de datos 1.Outputs[Salida de conversión de datos]"
+                  exclusionGroup="1"
+                  name="Salida de conversión de datos"
+                  synchronousInputId="Package\Tarea Flujo de datos\Conversión de datos 1.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos 1.Outputs[Salida de conversión de datos].Columns[Notas_Rendidas_Ent]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos 1.Outputs[Salida de conversión de datos].Columns[Notas_Rendidas_Ent]"
+                      name="Notas_Rendidas_Ent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Notas_Rendidas]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Conversión de datos 1.Outputs[Salida de error de conversión de datos]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de conversión de datos"
+                  synchronousInputId="Package\Tarea Flujo de datos\Conversión de datos 1.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos 1.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos 1.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos 1.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos 1.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Tarea Flujo de datos\FT_Asistencia"
               componentClassID="DTS.ManagedComponentWrapper.3"
               contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
@@ -723,13 +1258,13 @@ where [refTable].[Desc_Rut_Alumno] = ?</property>
                       cachedDataType="i4"
                       cachedName="Id_Alumno"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Alumno]"
-                      lineageId="Package\Tarea Flujo de datos\Busca Rut.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Id_Alumno]" />
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Id_Alumno]" />
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].Columns[Semestre]"
-                      cachedDataType="i2"
-                      cachedName="Semestre"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Semestre]"
-                      lineageId="Package\Tarea Flujo de datos\Parametros.Outputs[Salida de columna derivada].Columns[Semestre]" />
+                      refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].Columns[Id_Asignatura]"
+                      cachedDataType="i4"
+                      cachedName="Id_Asignatura"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Asignatura]"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Id_Asignatura]" />
                     <inputColumn
                       refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].Columns[Medicion]"
                       cachedDataType="i2"
@@ -737,17 +1272,35 @@ where [refTable].[Desc_Rut_Alumno] = ?</property>
                       externalMetadataColumnId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Medición]"
                       lineageId="Package\Tarea Flujo de datos\Parametros.Outputs[Salida de columna derivada].Columns[Medicion]" />
                     <inputColumn
+                      refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].Columns[Semestre]"
+                      cachedDataType="i2"
+                      cachedName="Semestre"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Semestre]"
+                      lineageId="Package\Tarea Flujo de datos\Parametros.Outputs[Salida de columna derivada].Columns[Semestre]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].Columns[Notas_Curso]"
+                      cachedDataType="ui4"
+                      cachedName="Notas_Curso"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[F_Notas_Curso]"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Curso]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].Columns[Notas_Alum]"
+                      cachedDataType="i4"
+                      cachedName="Notas_Alum"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[F_Notas_Rendidas]"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Alum]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].Columns[Notas_Azul]"
+                      cachedDataType="i4"
+                      cachedName="Notas_Azul"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[F_Notas_Azules]"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Azul]" />
+                    <inputColumn
                       refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].Columns[Asistencia]"
                       cachedDataType="r8"
                       cachedName="Asistencia"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[F_Asistencia]"
-                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[Asistencia]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].Columns[Id_Asignatura]"
-                      cachedDataType="i4"
-                      cachedName="Id_Asignatura"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Asignatura]"
-                      lineageId="Package\Tarea Flujo de datos\Busca Asignatura.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Id_Asignatura]" />
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Asistencia]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -772,10 +1325,17 @@ where [refTable].[Desc_Rut_Alumno] = ?</property>
                       dataType="r8"
                       name="F_Asistencia" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[F_Notas]"
-                      dataType="wstr"
-                      length="10"
-                      name="F_Notas" />
+                      refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[F_Notas_Curso]"
+                      dataType="i4"
+                      name="F_Notas_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[F_Notas_Rendidas]"
+                      dataType="i4"
+                      name="F_Notas_Rendidas" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\FT_Asistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[F_Notas_Azules]"
+                      dataType="i4"
+                      name="F_Notas_Azules" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -797,6 +1357,174 @@ where [refTable].[Desc_Rut_Alumno] = ?</property>
                       refId="Package\Tarea Flujo de datos\FT_Asistencia.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Tarea Flujo de datos\FT_Asistencia.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Notas 0"
+              componentClassID="DTSTransform.DerivedColumn.3"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Notas 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Notas 0.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Notas 0.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\Tarea Flujo de datos\Notas 0.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Notas 0.Outputs[Salida de columna derivada].Columns[Notas]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Flujo de datos\Notas 0.Outputs[Salida de columna derivada].Columns[Notas]"
+                      name="Notas"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_UI4)0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI4)0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Notas 0.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\Tarea Flujo de datos\Notas 0.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Notas 0.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Notas 0.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Notas 0.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Notas 0.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Notas 0 Alumno"
+              componentClassID="DTSTransform.DerivedColumn.3"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Notas 0 Alumno"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Notas 0 Alumno.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\Tarea Flujo de datos\Notas 0 Alumno.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de columna derivada].Columns[Notas_Alumno]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de columna derivada].Columns[Notas_Alumno]"
+                      name="Notas_Alumno"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_I4)0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de columna derivada].Columns[Notas_Azules]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de columna derivada].Columns[Notas_Azules]"
+                      name="Notas_Azules"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_I4)0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\Tarea Flujo de datos\Notas 0 Alumno.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -899,6 +1627,666 @@ where [refTable].[Desc_Rut_Alumno] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Unión de todo"
+              componentClassID="DTSTransform.UnionAll.3"
+              contactInfo="Unión de todo;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Combina las filas de varios flujos de datos sin ordenarlos. Por ejemplo, devuelve filas a un flujo de datos después de corregir los errores. Si el orden es importante, se recomienda usar la transformación Mezclar."
+              name="Unión de todo"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2]"
+                  hasSideEffects="true"
+                  name="Entrada de Unión de todo 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[RUT Alumno]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RUT Alumno"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[RUT Alumno]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Asignatura]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Asignatura"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[Asignatura]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asignatura]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Asistencia]"
+                      cachedDataType="r8"
+                      cachedName="Asistencia"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[Asistencia]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asistencia]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[SECCION]"
+                      cachedDataType="i4"
+                      cachedName="SECCION"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[SECCION]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[SECCION]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[JORNADA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="JORNADA"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[JORNADA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[JORNADA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Id_Alumno]"
+                      cachedDataType="i4"
+                      cachedName="Id_Alumno"
+                      lineageId="Package\Tarea Flujo de datos\Busca Rut.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Id_Alumno]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Alumno]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Id_Asignatura]"
+                      cachedDataType="i4"
+                      cachedName="Id_Asignatura"
+                      lineageId="Package\Tarea Flujo de datos\Busca Asignatura.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Id_Asignatura]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Asignatura]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Notas]"
+                      cachedDataType="ui4"
+                      cachedName="Notas"
+                      lineageId="Package\Tarea Flujo de datos\Notas 0.Outputs[Salida de columna derivada].Columns[Notas]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Notas_Curso]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 3]"
+                  hasSideEffects="true"
+                  name="Entrada de Unión de todo 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 3].Columns[RUT Alumno]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RUT Alumno"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[RUT Alumno]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 3].Columns[Asignatura]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Asignatura"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[Asignatura]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asignatura]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 3].Columns[Asistencia]"
+                      cachedDataType="r8"
+                      cachedName="Asistencia"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[Asistencia]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asistencia]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 3].Columns[SECCION]"
+                      cachedDataType="i4"
+                      cachedName="SECCION"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[SECCION]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[SECCION]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 3].Columns[JORNADA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="JORNADA"
+                      lineageId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET].Columns[JORNADA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[JORNADA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 3].Columns[Id_Alumno]"
+                      cachedDataType="i4"
+                      cachedName="Id_Alumno"
+                      lineageId="Package\Tarea Flujo de datos\Busca Rut.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Id_Alumno]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Alumno]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 3].Columns[Id_Asignatura]"
+                      cachedDataType="i4"
+                      cachedName="Id_Asignatura"
+                      lineageId="Package\Tarea Flujo de datos\Busca Asignatura.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Id_Asignatura]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Asignatura]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 3].Columns[Notas_Curso_Ent]"
+                      cachedDataType="ui4"
+                      cachedName="Notas_Curso_Ent"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Notas_Curso_Ent]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Notas_Curso]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrada de Unión de todo 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1]"
+                  name="Salida de Unión de todo 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]"
+                      name="RUT Alumno" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asignatura]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asignatura]"
+                      name="Asignatura" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asistencia]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asistencia]"
+                      name="Asistencia" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[SECCION]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[SECCION]"
+                      name="SECCION" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[JORNADA]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[JORNADA]"
+                      name="JORNADA" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Alumno]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Alumno]"
+                      name="Id_Alumno" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Asignatura]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Asignatura]"
+                      name="Id_Asignatura" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Notas_Curso]"
+                      dataType="ui4"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Notas_Curso]"
+                      name="Notas_Curso" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Unión de todo 1"
+              componentClassID="DTSTransform.UnionAll.3"
+              contactInfo="Unión de todo;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Combina las filas de varios flujos de datos sin ordenarlos. Por ejemplo, devuelve filas a un flujo de datos después de corregir los errores. Si el orden es importante, se recomienda usar la transformación Mezclar."
+              name="Unión de todo 1"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2]"
+                  hasSideEffects="true"
+                  name="Entrada de Unión de todo 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2].Columns[RUT Alumno]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RUT Alumno"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2].Columns[Asignatura]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Asignatura"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asignatura]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Asignatura]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2].Columns[Asistencia]"
+                      cachedDataType="r8"
+                      cachedName="Asistencia"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asistencia]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Asistencia]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2].Columns[SECCION]"
+                      cachedDataType="i4"
+                      cachedName="SECCION"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[SECCION]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[SECCION]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2].Columns[JORNADA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="JORNADA"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[JORNADA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[JORNADA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2].Columns[Id_Alumno]"
+                      cachedDataType="i4"
+                      cachedName="Id_Alumno"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Alumno]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Id_Alumno]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2].Columns[Id_Asignatura]"
+                      cachedDataType="i4"
+                      cachedName="Id_Asignatura"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Asignatura]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Id_Asignatura]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2].Columns[Notas_Curso]"
+                      cachedDataType="ui4"
+                      cachedName="Notas_Curso"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Notas_Curso]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Curso]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2].Columns[Notas_Azules]"
+                      cachedDataType="i4"
+                      cachedName="Notas_Azules"
+                      lineageId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de columna derivada].Columns[Notas_Azules]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Azul]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2].Columns[Notas_Alumno]"
+                      cachedDataType="i4"
+                      cachedName="Notas_Alumno"
+                      lineageId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de columna derivada].Columns[Notas_Alumno]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Alum]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3]"
+                  hasSideEffects="true"
+                  name="Entrada de Unión de todo 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3].Columns[RUT Alumno]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RUT Alumno"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3].Columns[Asignatura]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Asignatura"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asignatura]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Asignatura]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3].Columns[Asistencia]"
+                      cachedDataType="r8"
+                      cachedName="Asistencia"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Asistencia]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Asistencia]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3].Columns[SECCION]"
+                      cachedDataType="i4"
+                      cachedName="SECCION"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[SECCION]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[SECCION]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3].Columns[JORNADA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="JORNADA"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[JORNADA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[JORNADA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3].Columns[Id_Alumno]"
+                      cachedDataType="i4"
+                      cachedName="Id_Alumno"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Alumno]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Id_Alumno]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3].Columns[Id_Asignatura]"
+                      cachedDataType="i4"
+                      cachedName="Id_Asignatura"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Id_Asignatura]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Id_Asignatura]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3].Columns[Notas_Curso]"
+                      cachedDataType="ui4"
+                      cachedName="Notas_Curso"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Notas_Curso]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Curso]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3].Columns[Notas_Azul]"
+                      cachedDataType="i4"
+                      cachedName="Notas_Azul"
+                      lineageId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Notas_Azul]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Azul]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3].Columns[Notas_Rendidas_Ent]"
+                      cachedDataType="i4"
+                      cachedName="Notas_Rendidas_Ent"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos 1.Outputs[Salida de conversión de datos].Columns[Notas_Rendidas_Ent]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Alum]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 1]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrada de Unión de todo 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1]"
+                  name="Salida de Unión de todo 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[RUT Alumno]"
+                      name="RUT Alumno" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Asignatura]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Asignatura]"
+                      name="Asignatura" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Asistencia]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Asistencia]"
+                      name="Asistencia" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[SECCION]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[SECCION]"
+                      name="SECCION" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[JORNADA]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[JORNADA]"
+                      name="JORNADA" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Id_Alumno]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Id_Alumno]"
+                      name="Id_Alumno" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Id_Asignatura]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Id_Asignatura]"
+                      name="Id_Asignatura" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Curso]"
+                      dataType="ui4"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Curso]"
+                      name="Notas_Curso" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Azul]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Azul]"
+                      name="Notas_Azul" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Alum]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1].Columns[Notas_Alum]"
+                      name="Notas_Alum" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -907,20 +2295,70 @@ where [refTable].[Desc_Rut_Alumno] = ?</property>
               name="Salida de columna derivada"
               startId="Package\Tarea Flujo de datos\Parametros.Outputs[Salida de columna derivada]" />
             <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de columna derivada1]"
+              endId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2]"
+              name="Salida de columna derivada"
+              startId="Package\Tarea Flujo de datos\Notas 0.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de columna derivada2]"
+              endId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 2]"
+              name="Salida de columna derivada"
+              startId="Package\Tarea Flujo de datos\Notas 0 Alumno.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
+              endId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 3]"
+              name="Salida de conversión de datos"
+              startId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de conversión de datos1]"
+              endId="Package\Tarea Flujo de datos\Unión de todo 1.Inputs[Entrada de Unión de todo 3]"
+              name="Salida de conversión de datos"
+              startId="Package\Tarea Flujo de datos\Conversión de datos 1.Outputs[Salida de conversión de datos]" />
+            <path
               refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda]"
               endId="Package\Tarea Flujo de datos\Busca Asignatura.Inputs[Entrada de búsqueda]"
               name="Salida de entradas coincidentes de búsqueda"
               startId="Package\Tarea Flujo de datos\Busca Rut.Outputs[Salida de entradas coincidentes de búsqueda]" />
             <path
               refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda1]"
-              endId="Package\Tarea Flujo de datos\Parametros.Inputs[Entrada de columna derivada]"
+              endId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Inputs[Entrada de búsqueda]"
               name="Salida de entradas coincidentes de búsqueda"
               startId="Package\Tarea Flujo de datos\Busca Asignatura.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda2]"
+              endId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda3]"
+              endId="Package\Tarea Flujo de datos\Conversión de datos 1.Inputs[Entrada de conversión de datos]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas no coincidentes de búsqueda]"
+              endId="Package\Tarea Flujo de datos\Notas 0.Inputs[Entrada de columna derivada]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Tarea Flujo de datos\Busca Notas Asignatura.Outputs[Salida de entradas no coincidentes de búsqueda]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas no coincidentes de búsqueda1]"
+              endId="Package\Tarea Flujo de datos\Notas 0 Alumno.Inputs[Entrada de columna derivada]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Tarea Flujo de datos\Busca Notas Alumno.Outputs[Salida de entradas no coincidentes de búsqueda]" />
             <path
               refId="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
               endId="Package\Tarea Flujo de datos\Busca Rut.Inputs[Entrada de búsqueda]"
               name="Salida de origen de ADO NET"
               startId="Package\Tarea Flujo de datos\Asistencia.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de Unión de todo 1]"
+              endId="Package\Tarea Flujo de datos\Busca Notas Alumno.Inputs[Entrada de búsqueda]"
+              name="Salida de Unión de todo 1"
+              startId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de Unión de todo 11]"
+              endId="Package\Tarea Flujo de datos\Parametros.Inputs[Entrada de columna derivada]"
+              name="Salida de Unión de todo 1"
+              startId="Package\Tarea Flujo de datos\Unión de todo 1.Outputs[Salida de Unión de todo 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1031,29 +2469,29 @@ where [refTable].[Desc_Rut_Alumno] = ?</property>
     design-time-name="Package\Tarea Flujo de datos">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="143,42"
           Id="Package\Tarea Flujo de datos\FT_Asistencia"
-          TopLeft="317,469" />
+          TopLeft="340,968" />
         <NodeLayout
           Size="132,42"
           Id="Package\Tarea Flujo de datos\Parametros"
-          TopLeft="327,378" />
+          TopLeft="342,894" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de columna derivada]"
-          TopLeft="390.75,420">
+          TopLeft="409.75,936">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49"
+              EndConnector="0,32"
               Start="0,0"
-              End="0,41.5">
+              End="0,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.5" />
+                    End="0,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1116,32 +2554,388 @@ where [refTable].[Desc_Rut_Alumno] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-108.50701171875,31.75,217.0140234375,16"
+              BoundingBox="-99.8190234375,33.65234375,199.638046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Tarea Flujo de datos\Busca Notas Asignatura"
+          TopLeft="321,364" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda1]"
           TopLeft="393,307">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71"
+              EndConnector="23,57"
               Start="0,0"
-              End="0,63.5">
+              End="23,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.5" />
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
+                  <mssgle:LineSegment
+                    End="19,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19,28.5"
+                    Point2="23,28.5"
+                    Point3="23,32.5" />
+                  <mssgle:LineSegment
+                    End="23,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-99.8190234375,25.65234375,199.638046875,12.1953125"
+              BoundingBox="-88.3190234375,33.5,199.638046875,12.1953125"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Tarea Flujo de datos\Busca Notas Alumno"
+          TopLeft="325,627" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Tarea Flujo de datos\Notas 0"
+          TopLeft="569,445" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="416,406">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="210.5,39"
+              Start="0,0"
+              End="210.5,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="206.5,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="206.5,19.5"
+                    Point2="210.5,19.5"
+                    Point3="210.5,23.5" />
+                  <mssgle:LineSegment
+                    End="210.5,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-1.6390234375,24.5,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Tarea Flujo de datos\Unión de todo"
+          TopLeft="337,541" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de columna derivada1]"
+          TopLeft="626.5,487">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-194.166666666667,54"
+              Start="0,0"
+              End="-194.166666666667,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0463847203274" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.0463847203274"
+                    Point2="0,32.0463847203274"
+                    Point3="-4,32.0463847203274" />
+                  <mssgle:LineSegment
+                    End="-190.166666666667,32.0463847203274" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-190.166666666667,32.0463847203274"
+                    Point2="-194.166666666667,32.0463847203274"
+                    Point3="-194.166666666667,36.0463847203274" />
+                  <mssgle:LineSegment
+                    End="-194.166666666667,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Tarea Flujo de datos\Conversión de datos"
+          TopLeft="210,441" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda2]"
+          TopLeft="385.666666666667,406">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-88.1666666666667,35"
+              Start="0,0"
+              End="-88.1666666666667,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.1753653444676" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.1753653444676"
+                    Point2="0,14.1753653444676"
+                    Point3="-4,14.1753653444676" />
+                  <mssgle:LineSegment
+                    End="-84.1666666666667,14.1753653444676" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-84.1666666666667,14.1753653444676"
+                    Point2="-88.1666666666667,14.1753653444676"
+                    Point3="-88.1666666666667,18.1753653444676" />
+                  <mssgle:LineSegment
+                    End="-88.1666666666667,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-143.902356770833,19.1753653444676,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
+          TopLeft="297.5,483">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.1666666666667,58"
+              Start="0,0"
+              End="89.1666666666667,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.4201909959072" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.4201909959072"
+                    Point2="0,34.4201909959072"
+                    Point3="4,34.4201909959072" />
+                  <mssgle:LineSegment
+                    End="85.1666666666667,34.4201909959072" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.1666666666667,34.4201909959072"
+                    Point2="89.1666666666667,34.4201909959072"
+                    Point3="89.1666666666667,38.4201909959072" />
+                  <mssgle:LineSegment
+                    End="89.1666666666667,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de Unión de todo 1]"
+          TopLeft="411.25,583">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Tarea Flujo de datos\Unión de todo 1"
+          TopLeft="334,818" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Tarea Flujo de datos\Notas 0 Alumno"
+          TopLeft="576,628" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas no coincidentes de búsqueda1]"
+          TopLeft="501,648.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75,0"
+              Start="0,0"
+              End="67.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.1390234375,5,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de columna derivada2]"
+          TopLeft="653,670">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-217,148"
+              Start="0,0"
+              End="-217,140.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.8927203065134" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,83.8927203065134"
+                    Point2="0,87.8927203065134"
+                    Point3="-4,87.8927203065134" />
+                  <mssgle:LineSegment
+                    End="-213,87.8927203065134" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-213,87.8927203065134"
+                    Point2="-217,87.8927203065134"
+                    Point3="-217,91.8927203065134" />
+                  <mssgle:LineSegment
+                    End="-217,140.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Tarea Flujo de datos\Conversión de datos 1"
+          TopLeft="205,732" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda3]"
+          TopLeft="413,669">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-116,63"
+              Start="0,0"
+              End="-116,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="-4,31.5" />
+                  <mssgle:LineSegment
+                    End="-112,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-112,31.5"
+                    Point2="-116,31.5"
+                    Point3="-116,35.5" />
+                  <mssgle:LineSegment
+                    End="-116,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-157.8190234375,36.5,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de conversión de datos1]"
+          TopLeft="297,774">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90,44"
+              Start="0,0"
+              End="90,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1302681992337" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.1302681992337"
+                    Point2="0,26.1302681992337"
+                    Point3="4,26.1302681992337" />
+                  <mssgle:LineSegment
+                    End="86,26.1302681992337" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86,26.1302681992337"
+                    Point2="90,26.1302681992337"
+                    Point3="90,30.1302681992337" />
+                  <mssgle:LineSegment
+                    End="90,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de Unión de todo 11]"
+          TopLeft="409.75,860">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1203,6 +2997,52 @@ where [refTable].[Desc_Rut_Alumno] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Busca Notas Asignatura">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Notas_Asig]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">1</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Busca Notas Alumno">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Notas_Asig_Alu]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">1</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
